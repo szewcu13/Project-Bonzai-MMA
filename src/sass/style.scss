@@ -1,0 +1,1024 @@
+@import './colors';
+@import './components';
+@import './mixins';
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: 'Raleway', sans-serif;
+	font-size: 1.6rem;
+}
+
+// font-family: 'Cinzel', serif;
+
+//
+// NAV
+//
+
+.shadow-bg {
+	background-color: rgba(0, 0, 0, 0.9);
+}
+
+.nav-desktop {
+	display: none;
+	position: sticky;
+	top: 0;
+	margin-right: 20px;
+	padding: 20px;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.95);
+	font-size: 3rem;
+	text-align: right;
+	text-transform: uppercase;
+	z-index: 5;
+
+	.nav__link-desktop {
+		text-decoration: none;
+		color: white;
+		padding: 10px;
+		transition: color 0.5s;
+	}
+
+	.nav__link-desktop:hover {
+		color: $gold;
+	}
+
+	.nav-brand {
+		position: absolute;
+		top: 0;
+		left: 0;
+		margin-left: 20px;
+		padding: 20px;
+		color: white;
+		text-decoration: none;
+		font-weight: bold;
+		transition: color 0.5s;
+	}
+
+	.nav-brand:hover {
+		color: $gold;
+	}
+}
+
+.burger-btn {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	padding: 1em;
+	background: none;
+	border: 1px solid transparent;
+	cursor: pointer;
+	z-index: 1000;
+
+	&:focus {
+		outline: none;
+		border: 1px solid black;
+		border-radius: 8px;
+	}
+
+	&:hover {
+		.burger-btn__bars::after,
+		.burger-btn__bars::before {
+			width: 100%;
+		}
+	}
+
+	&__box {
+		position: relative;
+		width: 50px;
+		height: 40px;
+	}
+
+	&__bars,
+	&__bars::after,
+	&__bars::before {
+		@include burgerBtn;
+	}
+
+	&__bars {
+		width: 100%;
+
+		&::before {
+			top: 13px;
+			width: 60%;
+		}
+
+		&::after {
+			top: 26px;
+			width: 30%;
+			transition-delay: 0.1s;
+		}
+	}
+}
+
+.nav {
+	position: fixed;
+	top: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	// flex-direction: column;
+	height: 100vh;
+	width: 100%;
+	transform: translateX(100%);
+	background: black;
+	transition: 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+	z-index: 100;
+
+	&--active {
+		transform: translateX(0);
+	}
+
+	.nav__link {
+		position: relative;
+		display: block;
+		margin: 0.5em 0;
+		padding: 0.5em 2em;
+		font-size: 3.5rem;
+		text-decoration: none;
+		color: white;
+		text-transform: uppercase;
+		font-weight: bold;
+		transition: color 0.5s;
+
+		&:hover {
+			color: $gold;
+		}
+
+		&::before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 3px;
+			height: 100%;
+			transform: scaleY(0);
+			background-color: $gold;
+			content: '';
+			transition: transform 0.5s;
+		}
+		&:hover::before {
+			transform: scaleY(1);
+		}
+	}
+}
+
+.black-bars-color,
+.black-bars-color::after,
+.black-bars-color::before {
+	background-color: black;
+}
+
+//
+// ANIMACJA - NAV
+//
+
+@keyframes navLinksAnimation {
+	from {
+		transform: translateX(200%);
+	}
+	to {
+		transform: translateX(0);
+	}
+}
+
+.nav-links-animation {
+	animation: navLinksAnimation 1s both;
+}
+
+//
+// HEADER
+//
+
+.header {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: 2em;
+	height: 100vh;
+	color: white;
+	text-align: center;
+	@include heroImages('/src/img/bonzai-logo.jpg');
+	z-index: 0;
+
+	&__title {
+		text-transform: uppercase;
+		font-size: 6.5rem;
+		margin-bottom: 5px;
+	}
+
+	&__text {
+		font-size: 3rem;
+		font-weight: 300;
+	}
+
+	&__btn {
+		margin-top: 1.5em;
+		padding: 0.75em 1.2em;
+		background: white;
+		border-radius: 8px;
+		border: none;
+		color: black;
+		text-decoration: none;
+		font-size: 2.5rem;
+		text-transform: uppercase;
+		font-weight: bold;
+
+		&::before {
+			background-color: $gold;
+		}
+	}
+
+	.shadow {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.95);
+		z-index: -5;
+	}
+}
+
+//
+// SECTION NEWS
+//
+
+.news {
+	&__option {
+		font-family: "Roboto", sans-serif;
+		margin: 3em auto;
+		width: 100%;
+		box-shadow: 5px 5px 40px #2e2e2e2e;
+		background: rgb(30, 30, 32);
+		background: linear-gradient(
+			360deg,
+			rgba(30, 30, 32, 1) 0%,
+			rgba(60, 60, 64, 1) 100%
+			);
+			color: white;
+			box-shadow: 0 0 20px rgb(219, 144, 4);
+			border-radius: 8px;
+			overflow: hidden;
+			
+			&-img {
+				width: 100%;
+				height: 325px;
+			}
+			
+			&-info {
+				position: relative;
+				padding: 2em;
+			}
+
+		&-title {
+			margin-top: .5em;
+			margin-bottom: 2.4em;
+			font-size: 2.2rem;
+		}
+
+		&-btn {
+			position: absolute;
+			bottom: 1.5em;
+			right: 50%;
+			transform: translateX(50%);		
+			padding: 0.5em;
+			width: 40%;
+			font-size: 1.5rem;
+			font-weight: bold;
+			background-color: black;
+			color: white;
+			border: 1px solid $gold;
+			border-radius: 8px;
+			transition: background-color 0.6s, color 0.6s, border .6s;
+			cursor: pointer;
+		}
+		
+		&-btn:hover {
+			color: black;
+			background-color: $gold;
+			border: 1px solid black;
+		}
+
+		&-date {
+			position: absolute;
+			top: .8em;
+			margin-bottom: 1.5em;
+			color: $main-color;
+			font-size: 1.2rem;
+			text-align: left;
+		}
+	}
+}
+
+// .panel__option-one {
+// 	display: none;
+// 	justify-content: center;
+// 	align-items: center;
+
+// }
+
+// SECTION ABOUTUS
+
+.aboutus {
+	position: relative;
+	// display: flex;
+	// justify-content: center;
+	// align-items: center;
+	// flex-direction: column;
+	// margin-top: 1em;
+	padding: 6em;
+	// height: 100vh;
+	color: white;
+	text-align: center;
+	@include heroImages('/src/img/bonzai-logo.jpg');
+	z-index: 0;
+
+	.shadow {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.95);
+		z-index: -5;
+	}
+
+	&__text-top {
+		padding: 2em;
+		line-height: 200%;
+		text-align: justify;
+
+		&-title {
+			margin-bottom: 0.5em;
+			font-size: 3rem;
+		}
+
+		&--one {
+			font-size: 1.8rem;
+			letter-spacing: 1px;
+		}
+
+		&--two {
+			margin-top: 0.5em;
+			font-size: 1.8rem;
+			letter-spacing: 1px;
+		}
+	}
+
+	&__text-bottom {
+		padding: 2em;
+
+		&-title {
+			margin: 1em 0;
+			font-size: 3rem;
+		}
+		.aboutus__cards {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+
+			.aboutus__card {
+				padding: 1.5em;
+				width: 500px;
+				font-size: 1.5em;
+				transition: transform 0.5s, color 0.5s;
+
+				i {
+					font-size: 3rem;
+					margin-bottom: 0.5em;
+				}
+
+				&-title {
+					margin-bottom: 0.5em;
+					font-size: 2.5rem;
+					font-weight: bold;
+				}
+
+				&-text {
+					margin-bottom: 0.5em;
+					font-size: 1.8rem;
+				}
+
+				&:hover {
+					transform: scale(1.1);
+					color: $gold;
+				}
+			}
+		}
+	}
+}
+
+//
+// TRAININGS SECTION
+//
+
+.trainings {
+
+	padding: 4em;
+
+	.trainings-list {
+		padding: 2em;
+		font-size: 2rem;
+
+		li {
+			padding: 0.25em;
+		}
+	}
+
+	.trainings-title {
+		margin-top: 1.5em;
+		font-size: 3rem;
+	}
+
+	&__top {
+		&-img {
+			text-align: center;
+
+			img {
+				margin-top: 2em;
+				margin-bottom: 3em;
+				width: 60%;
+				border-radius: 10px;
+				box-shadow: 0 0 20px rgb(219, 144, 4);
+			}
+		}
+	}
+
+	&__box {
+		display: flex;
+		flex-direction: column;
+		margin: 2em 0;
+
+		&-img {
+			width: 100%;
+			margin-bottom: 1em;
+			border-radius: 5px;
+			box-shadow: 0 0 20px rgb(219, 144, 4);
+			transition: transform 0.6s;
+
+			&:hover {
+				transform: scale(1.05);
+			}
+		}
+
+		&-title {
+			font-size: 2rem;
+			margin-bottom: 0.5em;
+		}
+
+		&-description {
+			font-size: 1.8rem;
+			line-height: 150%;
+		}
+	}
+
+	&__plan {
+		margin: 1em 0;
+		padding: 1em;
+		font-size: 2.5rem;
+		text-align: center;
+
+		h3 {
+			letter-spacing: 1px;
+			margin-bottom: 1em;
+		}
+
+		img {
+			width: 100%;
+			height: auto;
+			border-radius: 10px;
+			box-shadow: 0 0 20px rgb(219, 144, 4);
+		}
+
+		&-text {
+			margin-top: 1.5em;
+			a {
+				text-decoration: none;
+				color: black;
+				font-weight: bold;
+				transition: color 0.5s;
+			}
+
+			a:hover {
+				color: rgb(119, 101, 0);
+			}
+		}
+	}
+}
+
+
+// 
+// KONTAKT
+// 
+
+.contact {
+	position: relative;
+	color: #fff;
+	padding: 6em;
+	@include heroImages('/src/img/bonzai-logo.jpg');
+	z-index: 0;
+
+	.shadow {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.95);
+		z-index: -5;
+	}
+
+	&__form, &__form-top {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__form-label {
+		margin-bottom: 0.5em;
+		text-transform: uppercase;
+	}
+
+	&__form-input {
+		@include contactForm;
+	}
+
+	&__form-textarea {
+		@include contactForm;
+
+		max-width: 100%;
+		min-width: 100%;
+		width: 100%;
+		min-height: 150px;
+	}
+
+	&__form-btn {
+		align-self: flex-end;
+		padding: .5em;
+		width: 100%;
+		max-width: 300px;
+		font-weight: bold;
+		font-size: 1.75rem;
+		border: none;
+		border-radius: 8px;
+		cursor: pointer;
+
+		&::before {
+			background-color: $gold;
+		}
+	}
+}
+
+
+
+// 
+// FOOTER
+// 
+
+.footer {
+	background-color: black;
+	color: white;
+
+	.wrapper {
+		padding: 4em 2em 2em;
+	}
+	
+	.desktop {
+		display: none;
+	}
+	&__box {
+		margin-bottom: 1.2em;
+		text-align: center;
+		font-size: 1.6rem;
+
+
+		&-title {
+			margin-bottom: .5em;
+			font-size: 2.5rem;
+		}
+
+		&-link {
+			padding: .25em;
+			font-size: 4rem;
+			color: #fff;
+			transition: color .5s;
+
+			&:hover {
+				color: $gold;
+			}
+		}
+
+		.icon {
+			margin-right: 0.5em;
+		}
+
+		&-info {
+			margin-top: 1em;
+
+			a {
+				font-size: 2.2rem;
+				font-weight: bold;
+				color: rgb(218, 200, 103);
+				text-decoration: none;
+				transition: color .5s;
+
+				&:hover {
+					color: rgb(213, 188, 42);
+				}
+			}
+		}
+
+		&-adress {
+			margin-top: 1em;
+
+			i {
+				margin-bottom: 0.5em;
+			}
+		}
+
+	}
+
+	&__map {
+		margin-top: 2em;
+	}
+
+	&__bottom-text {
+		padding: 1em;
+		text-align: center;
+	}
+}
+
+//
+// MEDIA Q
+//
+
+@media (max-width: 576px) {
+	.header {
+		&__title {
+			font-size: 3rem;
+		}
+
+		&__text {
+			font-size: 2rem;
+		}
+
+		&__btn {
+			font-size: 1.2rem;
+		}
+	}
+
+	.burger-btn {
+		&__box {
+			width: 35px;
+			height: 25px;
+		}
+	}
+
+	.nav {
+		.nav__link {
+			font-size: 2.5rem;
+		}
+	}
+
+	.aboutus {
+		&__text-top {
+			padding: 0;
+
+			&-title {
+				font-size: 2.5rem;
+			}
+
+			&--one {
+				font-size: 2.2rem;
+			}
+		}
+
+		&__text-bottom {
+			&-title {
+				font-size: 2.5rem;
+			}
+		}
+
+		.aboutus__cards {
+			.aboutus__card {
+				i {
+					font-size: 3rem;
+				}
+
+				&-title {
+					font-size: 2.2rem;
+				}
+
+				&-text {
+					font-size: 1.8rem;
+				}
+			}
+		}
+	}
+
+	// .footer {
+	// 	text-align: center;
+	// 	&__box {
+	// 	}
+	// }
+}
+
+@media (min-width: 576px) {
+	.header {
+		&__title {
+			font-size: 3rem;
+		}
+
+		&__text {
+			font-size: 2rem;
+		}
+
+		&__btn {
+			font-size: 1.6rem;
+		}
+	}
+
+	.burger-btn {
+		&__box {
+			width: 40px;
+			height: 30px;
+		}
+	}
+
+	.nav {
+		.nav__link {
+			font-size: 2.5rem;
+		}
+	}
+
+	.news {
+		&__option {
+			text-align: center;
+			width: 75%;
+
+			&-title {
+				font-size: 1.8rem;
+			}
+		}
+	}
+
+	.trainings {
+		&__box {
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+
+			&-text {
+				width: 55%;
+
+				&--right {
+					text-align: right;
+				}
+			}
+
+			&-image {
+				width: 40%;
+
+				&--right {
+					order: 1;
+				}
+			}
+
+			&-img {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.header {
+		&__title {
+			font-size: 5.5rem;
+		}
+
+		&__text {
+			font-size: 3rem;
+		}
+
+		&__btn {
+			font-size: 2rem;
+		}
+	}
+
+	.nav {
+		.nav__link {
+			font-size: 3.5rem;
+		}
+	}
+
+	.burger-btn {
+		&__box {
+			width: 50px;
+			height: 40px;
+		}
+	}
+
+	.news {
+		&__option {
+
+			width: 60%;
+
+			&-title {
+				font-size: 2rem;
+			}
+		}
+	}
+
+	.trainings {
+		&__box {
+
+			&-title {
+				font-size: 2.5rem;
+			}
+
+			&-description {
+				font-size: 2rem;
+			}
+		}
+
+		&__top {
+			&-img {
+				img {
+					width: 40%;
+				}
+			}
+		}
+
+			&__plan {
+				.trainings-title {
+					margin-bottom: 1em;
+				}
+	
+				img {
+					width: 75%;
+					height: auto;
+				}
+			}
+	}
+
+	.footer {
+		.desktop {
+			display: block;
+			width: 45%;
+		}
+
+		&__boxes {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		&__box {
+			margin: 0 2em;
+			width: 25%;
+			font-size: 1.6rem;
+			
+			p{
+				padding: 0.25em;
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.burger-btn {
+		display: none;
+	}
+
+	.nav-desktop {
+		display: block;
+		font-size: 2.2rem;
+	}
+
+	.news {
+		&__box {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+
+		&__option {
+			width: 40%;
+
+			
+			&-img {
+				width: 100%;
+				height: 325px;
+			}
+
+			&-title {
+				font-size: 2.2rem;
+			}
+
+			&-btn {
+				padding: 0.6em 1em;
+				font-size: 1.6rem;
+				width: 200px;
+			}
+		}
+	}
+
+	.aboutus {
+		&__text-top {
+			line-height: 210%;
+
+			&-title {
+				font-size: 3.5rem;
+				margin-bottom: 1em;
+			}
+
+			&--one {
+				font-size: 2rem;
+			}
+			&--two {
+				font-size: 2rem;
+			}
+			&--three {
+				font-size: 2rem;
+			}
+		}
+
+		&__text-bottom {
+			&-title {
+				font-size: 3.5rem;
+			}
+		}
+
+		.aboutus__cards {
+			.aboutus__card {
+				i {
+					font-size: 3rem;
+				}
+
+				&-title {
+					font-size: 2.5rem;
+				}
+
+				&-text {
+					font-size: 2rem;
+				}
+			}
+		}
+	}
+
+	.trainings {
+		.trainings-list {
+			padding: 2em;
+			font-size: 2.2rem;
+
+			li {
+				padding: 0.25em;
+			}
+		}
+
+		.trainings-title {
+			// margin: 1em 1em;
+			font-size: 3.5rem;
+		}
+
+		&__box {
+			&-title {
+				font-size: 2.8rem;
+			}
+
+			&-description {
+				font-size: 2rem;
+			}
+		}
+
+		&__plan {
+			.trainings-title {
+				margin-bottom: 1em;
+			}
+
+			img {
+				width: 50%;
+				height: auto;
+			}
+		}
+	}
+}
+
+
+@media (min-width: 1200px) {
+	.nav-desktop {
+		font-size: 2.5rem;
+	}
+}

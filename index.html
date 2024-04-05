@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bonzai MMA</title>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Raleway:wght@200;400;900&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+		<script
+			src="https://kit.fontawesome.com/d5419b392a.js"
+			crossorigin="anonymous"
+		></script>
+		<link rel="stylesheet" href="dist/css/style.min.css" />
+	</head>
+
+	<body>
+		<button class="burger-btn">
+			<div class="burger-btn__box">
+				<div class="burger-btn__bars"></div>
+			</div>
+		</button>
+
+		<nav class="nav">
+			<!-- <button class="burger-btn">
+				<div class="burger-btn__box">
+					<div class="burger-btn__bars"></div>
+				</div>
+			</button> -->
+			<!-- <nav class="nav nav-mobile"> -->
+				<div class="nav__links">
+					<a class="nav__link nav-animation" href="#news">aktualności</a>
+					<a class="nav__link nav-animation" href="#aboutus">o nas</a>
+					<a class="nav__link nav-animation" href="#trainings">zajęcia</a>
+					<a class="nav__link nav-animation" href="#team">kadra</a>
+					<a class="nav__link nav-animation" href="#gallery">galeria</a>
+					<a class="nav__link nav-animation" href="#contact">kontakt</a>
+				</div>
+			<!-- </nav> -->
+		</nav>
+		<nav class="nav-desktop">
+			<a class="nav-brand nav__link-desktop" href="#trainings">Bonzai MMA</a>
+			<a class="nav__link-desktop" href="#news">aktualności</a>
+			<a class="nav__link-desktop" href="#aboutus">o nas</a>
+			<a class="nav__link-desktop" href="#trainings">zajęcia</a>
+			<a class="nav__link-desktop" href="#team">kadra</a>
+			<a class="nav__link-desktop" href="#gallery">galeria</a>
+			<a class="nav__link-desktop" href="#contact">kontakt</a>
+		</nav>
+
+		<header class="header section">
+			<h1 class="header__title">Witaj w Bonzai MMA</h1>
+			<p class="header__text">
+				Miejscu, dzięki któremu pokochasz sporty walki!
+			</p>
+			<a href="#aboutus" class="header__btn btn-special-animation">Dołącz do nas</a>
+			<div class="shadow"></div>
+		</header>
+
+		<main class="main">
+			<section class="news section-padding section white-section" id="news">
+				<h2 class="section-title">Aktualności</h2>
+				<div class="underline"></div>
+				<div class="wrapper">
+					<div class="news__box">
+						<div class="news__option">
+							<img
+								src="src/img/IMG_5690.JPG"
+								alt="Zdjęcie po walce na KSW 71."
+								class="news__option-img"
+							/>
+							<div class="news__option-info">
+								<p class="news__option-date">17.02.2024 r.</p>
+								<h3 class="news__option-title">Wygrana walka Wióra na KSW 71 we Wrocławiu!</h3>
+								<button class="news__option-btn btn-special-animation">
+									więcej..
+								</button>
+							</div>
+						</div>
+						<!-- <div class="panel__option-one">
+							<div class="news__option">
+								<img
+									src="./img/IMG_5690.JPG"
+									alt="Zdjęcie po walce na KSW 71."
+									class="news__option-img"
+								/>
+								<div class="news__option-info">
+									<h3 class="news__option-title">Gala KSW 71 za nami!</h3>
+									<p class="news__option-text">
+										Lorem ipsum dolor sit amet consectetur adipisicing elit.
+										Voluptatum similique ipsum quia natus labore suscipit
+										laudantium nostrum aliquam tempore perspiciatis?
+									</p>
+									<p class="news__option-text">
+										Lorem ipsum dolor sit amet consectetur adipisicing elit.
+									</p>
+								</div>
+							</div>
+						</div> -->
+						<div class="news__option">
+							<img
+								src="src/img/IMG_5691.JPG"
+								alt="Zdjęcie po walce na High League 2."
+								class="news__option-img news__option-img--right"
+							/>
+							<div class="news__option-info">
+								<p class="news__option-date">17.02.2024 r.</p>
+								<h3 class="news__option-title">
+									Świetny występ naszego zawodnika na HIGH LEAGUE 2.
+								</h3>
+								<button class="news__option-btn btn-special-animation">
+									więcej..
+								</button>
+							</div>
+						</div>
+						<div class="news__option">
+							<img
+								src="src/img/4contra_wroclaw.jpg"
+								alt="Zdjęcie po treningu grypu MMA PRO."
+								class="news__option-img"
+							/>
+							<div class="news__option-info">
+								<p class="news__option-date">17.02.2024 r.</p>
+								<h3 class="news__option-title">
+									Gala Contra MMA 4 obfitowała w świetne pojedynki!
+								</h3>
+								<button class="news__option-btn btn-special-animation">
+									więcej..
+								</button>
+							</div>
+						</div>
+						<div class="news__option">
+							<img
+								src="src/img/IMG_5688.JPG"
+								alt="Zdjęcie po treningu grypu MMA PRO."
+								class="news__option-img news__option-img--right"
+							/>
+							<div class="news__option-info">
+								<p class="news__option-date">17.02.2024 r.</p>
+								<h3 class="news__option-title">
+									Walka naszego trenera na gali FIGHT EMPIRE 2!
+								</h3>
+								<button class="news__option-btn btn-special-animation">
+									więcej..
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="aboutus section-padding section" id="aboutus">
+				<div class="shadow"></div>
+				<h2 class="section-title">O nas</h2>
+				<div class="underline"></div>
+
+				<div class="wrapper">
+					<div class="aboutus__text-top">
+						<h3 class="aboutus__text-top-title">O klubie</h3>
+						<p class="aboutus__text-top--one">
+							W naszym klubie dążymy do stworzenia jak najlepszych warunków do
+							trenowania przy udziale wykwalifikowanej i doświadczonej kadry
+							trenerskiej. Zapraszamy na treningi osoby w każdym stopniu
+							zaawansowania. Lorem, ipsum dolor sit amet consectetur adipisicing
+							elit. 
+						</p>
+						<p class="aboutus__text-top--two">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius amet molestias cumque quidem odio porro consequuntur illo magni, voluptatum ipsum nostrum est mollitia ut? Reprehenderit obcaecati sit harum nesciunt exercitationem explicabo dicta omnis quasi recusandae pariatur quibusdam placeat, nisi neque consequatur dolor eligendi ab, sunt laudantium aliquid accusamus. Quas, perspiciatis voluptatum vitae corporis explicabo sit neque perferendis debitis doloribus voluptatem!</p>
+						<!-- <p class="aboutus__text-top--three">
+							Nie wiesz od czego zacząć?
+							<a href="#contact">Skontaktuj się z trenerem!</a>
+						</p> -->
+					</div>
+					<hr/>
+					<div class="aboutus__text-bottom">
+						<h3 class="aboutus__text-bottom-title">Co zyskujesz trenując z Nami?</h3>
+						<div class="aboutus__cards">
+							<div class="aboutus__card">
+								<p><i class="fa-solid fa-building"></i></p>
+								<p class="aboutus__card-title">Bardzo dobre warunki</p>
+								<p class="aboutus__card-text">
+									Nasza sala wyposażona jest w najlepszy sprzęt.
+								</p>
+							</div>
+							<div class="aboutus__card">
+								<p><i class="fa-solid fa-handshake-simple"></i></p>
+								<p class="aboutus__card-title">
+									Świetna atmosfera 
+								</p>
+								<p class="aboutus__card-text">
+									W naszym klubie staramy się, aby każdy czuł się jak w drugim
+									domu.
+								</p>
+							</div>
+							<div class="aboutus__card">
+								<p><i class="fa-solid fa-person"></i></p>
+								<p class="aboutus__card-title">Doświadczeni trenerzy</p>
+								<p class="aboutus__card-text">
+									Nasi trenerzy posiadają wieloletnie doświadczenie w swoich
+									dziedzinach.
+								</p>
+							</div>
+							<div class="aboutus__card">
+								<p><i class="fa-solid fa-brain"></i></p>
+								<p class="aboutus__card-title">Induwidualne podejście</p>
+								<p class="aboutus__card-text">
+									Dostosowujemy się do indywidualnych potrzeb każdego naszego
+									podopiecznego.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="trainings section-padding section white-section" id="trainings">
+				<h2 class="section-title">Zajęcia</h2>
+				<div class="underline"></div>
+				<div class="wrapper">
+					<div class="trainings__top">
+						
+						<h3 class="trainings-title">Kto może u nas trenować?</h3>
+						<ul class="trainings-list">
+							<li><strong>dzieci i dorośli,</strong> którzy dopiero zaczynają swoją przygodę ze sportami walki i nie wiedzą, w którą stronę rozwinie się ich nowa pasja,</li>
+							<li><strong>osoby trenujące rekreacyjnie,</strong> szukające nowych wyzwań,</li>
+							<li><strong>profesjonalni i amatorscy zawodnicy,</strong> dla których sporty walki są sportem wyczynowym, a ich celem jest rywalizacja sportowa w zawodach czy profesjonalnych walkach.</li>
+						</ul>
+						<div class="trainings__top-img">
+							<img src="src/img/bonzai-logo.jpg" alt="Grupa MMA PRO">
+						</div>
+					</div>
+					<hr>
+					<div class="trainings__bottom">
+						<h3 class="trainings-title">Co możesz trenować w naszym klubie?</h3>
+						<div class="trainings__box">
+							<div class="trainings__box-image">
+								<img class="trainings__box-img" src="src/img/IMG_5814.JPG" alt="">
+							</div>
+							<div class="trainings__box-text">
+								<h4 class="trainings__box-title">MMA - Mieszane sztuki walki</h4>
+								<p class="trainings__box-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae exercitationem enim amet deleniti. Cumque ab reiciendis iure optio odit facilis maiores nesciunt voluptates amet nihil. Nemo alias quis atque voluptates!</p>
+							</div>
+						</div>
+						<div class="trainings__box">
+							<div class="trainings__box-image trainings__box-image--right">
+								<img class="trainings__box-img" src="src/img/IMG_5815.JPG" alt="">
+							</div>
+							<div class="trainings__box-text trainings__box-text--right">
+								<h4 class="trainings__box-title">BJJ - Brazylijskie jiu-jitsu</h4>
+								<p class="trainings__box-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae exercitationem enim amet deleniti. Cumque ab reiciendis iure optio odit facilis maiores nesciunt voluptates amet nihil. Nemo alias quis atque voluptates!</p>
+							</div>
+						</div>
+						<div class="trainings__box">
+							<div class="trainings__box-image">
+								<img class="trainings__box-img" src="src/img/lemur.jpg" alt="">
+							</div>
+							<div class="trainings__box-text">
+								<h4 class="trainings__box-title">Zapasy</h4>
+								<p class="trainings__box-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae exercitationem enim amet deleniti. Cumque ab reiciendis iure optio odit facilis maiores nesciunt voluptates amet nihil. Nemo alias quis atque voluptates!</p>
+							</div>
+						</div>
+						<div class="trainings__box">
+							<div class="trainings__box-image trainings__box-image--right">
+								<img class="trainings__box-img" src="src/img/IMG_5822.JPG" alt="">
+							</div>
+							<div class="trainings__box-text trainings__box-text--right">
+								<h4 class="trainings__box-title">Muay Thai</h4>
+								<p class="trainings__box-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae exercitationem enim amet deleniti. Cumque ab reiciendis iure optio odit facilis maiores nesciunt voluptates amet nihil. Nemo alias quis atque voluptates!</p>
+							</div>
+						</div>
+						<div class="trainings__box">
+							<div class="trainings__box-image">
+								<img class="trainings__box-img" src="src/img/pogo.jpg" alt="">
+							</div>
+							<div class="trainings__box-text">
+								<h4 class="trainings__box-title">Przygotowanie motoryczne</h4>
+								<p class="trainings__box-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae exercitationem enim amet deleniti. Cumque ab reiciendis iure optio odit facilis maiores nesciunt voluptates amet nihil. Nemo alias quis atque voluptates!</p>
+							</div>
+						</div>
+						
+					</div>
+					<div class="trainings__plan" id="plan">
+						<h3 class="trainings-title">Grafik</h3>
+						<img src="src/img/grafik.jpg" alt="">
+						<p class="trainings__plan-text">
+							Nie wiesz od czego zacząć?
+							<a href="#contact">Skontaktuj się z trenerem!</a>
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="contact section-padding section" id="contact">
+				<div class="shadow"></div>
+				<h2 class="section-title">Kontakt</h2>
+				<div class="underline"></div>
+				<div class="wrapper">
+					<form action="" class="contact__form">
+						<div class="contact__form-top">
+							<label for="name" class="contact__form-label">Imię i nazwisko:</label>
+							<input type="text" class="contact__form-input" id="name">
+							<label for="email" class="contact__form-label">Adres e-mail:</label>
+							<input type="text" id="email" class="contact__form-input">
+						</div>
+						<label for="msg" class="contact__form-label">Wiadomość:</label>
+						<textarea id="msg" class="contact__form-textarea"></textarea>
+
+						<button type="submit" class="contact__form-btn btn-special-animation">Wyślij</button>
+					</form>
+				</div>
+			</section>
+		</main>
+
+		<footer class="footer">
+
+			<div class="wrapper">
+
+				<div class="footer__boxes">
+					<div class="footer__box">
+						<h3 class="footer__box-title">Social media</h3>
+						<div class="footer__box-links">
+							<a href="https://www.facebook.com/bonzaimmawroclaw/" class="footer__box-link"><i class="fab fa-facebook-square"></i></a>
+							<a href="https://www.instagram.com/bonzaimma/" class="footer__box-link"><i class="fab fa-instagram"></i></a>
+						</div>
+					</div>
+					<div class="footer__box desktop">
+						<h3 class="footer__box-title">Bonzai MMA</h3>
+						<p>
+							Bonzai MMA to klub sportów walki, gdzie każdy znajdzie coś dla siebie. Na naszej sali poczujesz się komfortowo, a na trening będziesz przychodzić z uśmiechem na twarzy. 
+						</p>
+						<p class="footer__box-info">
+							<a href="#aboutus">Dowiedz się więcej!</a>
+						</p>
+					</div>
+					<div class="footer__box">
+						<h3 class="footer__box-title">Adres</h3>
+						<p><i class="icon fa-solid fa-phone"></i>+55 555 555 555</p>
+						<p><i class="icon fa-solid fa-envelope"></i>bonzaimma@gmail.com</p>
+						<div class="footer__box-adress">
+							<p><i class="fa-solid fa-location-dot"></i></p>
+							<p>ul. Góralska 5</p>
+							<p>53-610 Wrocław</p>
+						</div>
+					</div>
+				</div>
+				<div class="footer__map">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2504.9673821987453!2d16.999757576494382!3d51.10906197172538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470fc3de721f5af5%3A0xd5212155188f2d45!2sBonzai%20x%20Gorila!5e0!3m2!1spl!2spl!4v1712240400653!5m2!1spl!2spl" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				</div>
+
+			</div>
+
+			<hr>
+
+			<p class="footer__bottom-text"> &copy; <span class="footer-year"></span> Bonzai MMA | Realizacja: Kamil Szewczyk</p>
+
+		</footer>
+
+	
+
+		<script src="dist/js/main.min.js"></script>
+	</body>
+</html>
