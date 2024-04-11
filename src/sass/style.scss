@@ -564,6 +564,11 @@ body {
 			font-size: 3rem;
 			text-shadow: 0 0 10px black;
 			cursor: pointer;
+			z-index: 10;
+		}
+
+		.question-btn:hover~.team__card-text {
+			clip-path: circle(120% at 50% 90%);
 		}
 
 		&-text {
@@ -578,6 +583,8 @@ body {
 			padding: 2em 1em;
 			font-size: 1.5rem;
 			background-color: rgba(0, 0, 0, 0.85);
+			clip-path: circle(0 at 50% 90%);
+			transition: clip-path .8s;
 
 			.card-title-name {
 				// margin-bottom: 0.2em;
