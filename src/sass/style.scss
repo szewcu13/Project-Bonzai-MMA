@@ -258,7 +258,7 @@ body {
 
 .news {
 	&__option {
-		font-family: "Roboto", sans-serif;
+		font-family: 'Roboto', sans-serif;
 		margin: 3em auto;
 		width: 100%;
 		box-shadow: 5px 5px 40px #2e2e2e2e;
@@ -267,24 +267,24 @@ body {
 			360deg,
 			rgba(30, 30, 32, 1) 0%,
 			rgba(60, 60, 64, 1) 100%
-			);
-			color: white;
-			box-shadow: 0 0 20px rgb(219, 144, 4);
-			border-radius: 8px;
-			overflow: hidden;
-			
-			&-img {
-				width: 100%;
-				height: 325px;
-			}
-			
-			&-info {
-				position: relative;
-				padding: 2em;
-			}
+		);
+		color: white;
+		box-shadow: 0 0 20px rgb(219, 144, 4);
+		border-radius: 8px;
+		overflow: hidden;
+
+		&-img {
+			width: 100%;
+			height: 325px;
+		}
+
+		&-info {
+			position: relative;
+			padding: 2em;
+		}
 
 		&-title {
-			margin-top: .5em;
+			margin-top: 0.5em;
 			margin-bottom: 2.4em;
 			font-size: 2.2rem;
 		}
@@ -293,7 +293,7 @@ body {
 			position: absolute;
 			bottom: 1.5em;
 			right: 50%;
-			transform: translateX(50%);		
+			transform: translateX(50%);
 			padding: 0.5em;
 			width: 40%;
 			font-size: 1.5rem;
@@ -302,10 +302,10 @@ body {
 			color: white;
 			border: 1px solid $gold;
 			border-radius: 8px;
-			transition: background-color 0.6s, color 0.6s, border .6s;
+			transition: background-color 0.6s, color 0.6s, border 0.6s;
 			cursor: pointer;
 		}
-		
+
 		&-btn:hover {
 			color: black;
 			background-color: $gold;
@@ -314,7 +314,7 @@ body {
 
 		&-date {
 			position: absolute;
-			top: .8em;
+			top: 0.8em;
 			margin-bottom: 1.5em;
 			color: $main-color;
 			font-size: 1.2rem;
@@ -330,17 +330,13 @@ body {
 
 // }
 
+//
 // SECTION ABOUTUS
+//
 
 .aboutus {
 	position: relative;
-	// display: flex;
-	// justify-content: center;
-	// align-items: center;
-	// flex-direction: column;
-	// margin-top: 1em;
-	padding: 6em;
-	// height: 100vh;
+	padding: 3em;
 	color: white;
 	text-align: center;
 	@include heroImages('/src/img/bonzai-logo.jpg');
@@ -357,7 +353,7 @@ body {
 	}
 
 	&__text-top {
-		padding: 2em;
+		margin-bottom: 2em;
 		line-height: 200%;
 		text-align: justify;
 
@@ -379,7 +375,7 @@ body {
 	}
 
 	&__text-bottom {
-		padding: 2em;
+		padding: 1em;
 
 		&-title {
 			margin: 1em 0;
@@ -391,7 +387,7 @@ body {
 			flex-wrap: wrap;
 
 			.aboutus__card {
-				padding: 1.5em;
+				padding: 1em;
 				width: 500px;
 				font-size: 1.5em;
 				transition: transform 0.5s, color 0.5s;
@@ -426,7 +422,6 @@ body {
 //
 
 .trainings {
-
 	padding: 4em;
 
 	.trainings-list {
@@ -460,7 +455,7 @@ body {
 	&__box {
 		display: flex;
 		flex-direction: column;
-		margin: 2em 0;
+		margin: 4em 0;
 
 		&-img {
 			width: 100%;
@@ -486,7 +481,7 @@ body {
 	}
 
 	&__plan {
-		margin: 1em 0;
+		// margin: 1em 0;
 		padding: 1em;
 		font-size: 2.5rem;
 		text-align: center;
@@ -519,10 +514,107 @@ body {
 	}
 }
 
+//
+// TEAM
+//
 
-// 
+.team {
+	position: relative;
+	padding: 2em;
+	color: white;
+	text-align: center;
+	@include heroImages('/src/img/bonzai-logo.jpg');
+	z-index: 0;
+
+	.shadow {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.95);
+		z-index: -5;
+	}
+
+	&__cards {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	&__card {
+		position: relative;
+		margin: 2em;
+		height: 500px;
+		width: 300px;
+		background-position: center;
+		background-size: cover;
+		border-radius: 8px;
+		box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
+		overflow: hidden;
+
+		.question-btn {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			padding: 10px;
+			background: none;
+			border: none;
+			color: #fff;
+			font-size: 3rem;
+			text-shadow: 0 0 10px black;
+			cursor: pointer;
+		}
+
+		&-text {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			position: absolute;
+			top: 0;
+			right: 0;
+			left: 0;
+			bottom: 0;
+			padding: 2em 1em;
+			font-size: 1.5rem;
+			background-color: rgba(0, 0, 0, 0.85);
+
+			.card-title-name {
+				// margin-bottom: 0.2em;
+				color: $gold;
+			}
+
+			.card-title-training{
+				margin-bottom: 1em;
+				font-size: 1.6rem;
+				color: $dark-white;
+			}
+
+			.card-description {
+				font-size: 1.4rem;
+			}
+		}
+	}
+
+	.one {
+		background-image: url('/src/img/IMG_6173.JPG');
+	}
+
+	.two {
+		background-image: url('/src/img/IMG_6189.jpg');
+	}
+
+	.three {
+		background-image: url('/src/img/IMG_6174.jpg');
+	}
+
+
+
+}
+
+//
 // KONTAKT
-// 
+//
 
 .contact {
 	position: relative;
@@ -541,7 +633,8 @@ body {
 		z-index: -5;
 	}
 
-	&__form, &__form-top {
+	&__form,
+	&__form-top {
 		display: flex;
 		flex-direction: column;
 	}
@@ -566,7 +659,7 @@ body {
 
 	&__form-btn {
 		align-self: flex-end;
-		padding: .5em;
+		padding: 0.5em;
 		width: 100%;
 		max-width: 300px;
 		font-weight: bold;
@@ -581,11 +674,9 @@ body {
 	}
 }
 
-
-
-// 
+//
 // FOOTER
-// 
+//
 
 .footer {
 	background-color: black;
@@ -594,7 +685,7 @@ body {
 	.wrapper {
 		padding: 4em 2em 2em;
 	}
-	
+
 	.desktop {
 		display: none;
 	}
@@ -603,17 +694,16 @@ body {
 		text-align: center;
 		font-size: 1.6rem;
 
-
 		&-title {
-			margin-bottom: .5em;
+			margin-bottom: 0.5em;
 			font-size: 2.5rem;
 		}
 
 		&-link {
-			padding: .25em;
+			padding: 0.25em;
 			font-size: 4rem;
 			color: #fff;
-			transition: color .5s;
+			transition: color 0.5s;
 
 			&:hover {
 				color: $gold;
@@ -632,7 +722,7 @@ body {
 				font-weight: bold;
 				color: rgb(218, 200, 103);
 				text-decoration: none;
-				transition: color .5s;
+				transition: color 0.5s;
 
 				&:hover {
 					color: rgb(213, 188, 42);
@@ -647,7 +737,6 @@ body {
 				margin-bottom: 0.5em;
 			}
 		}
-
 	}
 
 	&__map {
@@ -701,7 +790,7 @@ body {
 			}
 
 			&--one {
-				font-size: 2.2rem;
+				font-size: 2rem;
 			}
 		}
 
@@ -833,7 +922,6 @@ body {
 
 	.news {
 		&__option {
-
 			width: 60%;
 
 			&-title {
@@ -844,7 +932,6 @@ body {
 
 	.trainings {
 		&__box {
-
 			&-title {
 				font-size: 2.5rem;
 			}
@@ -862,16 +949,16 @@ body {
 			}
 		}
 
-			&__plan {
-				.trainings-title {
-					margin-bottom: 1em;
-				}
-	
-				img {
-					width: 75%;
-					height: auto;
-				}
+		&__plan {
+			.trainings-title {
+				margin-bottom: 1em;
 			}
+
+			img {
+				width: 75%;
+				height: auto;
+			}
+		}
 	}
 
 	.footer {
@@ -889,8 +976,8 @@ body {
 			margin: 0 2em;
 			width: 25%;
 			font-size: 1.6rem;
-			
-			p{
+
+			p {
 				padding: 0.25em;
 			}
 		}
@@ -917,7 +1004,6 @@ body {
 		&__option {
 			width: 40%;
 
-			
 			&-img {
 				width: 100%;
 				height: 325px;
@@ -1015,7 +1101,6 @@ body {
 		}
 	}
 }
-
 
 @media (min-width: 1200px) {
 	.nav-desktop {
