@@ -5,9 +5,15 @@ const allNavLinks = document.querySelectorAll('.nav-animation');
 const allSections = document.querySelectorAll('.section');
 const footerYear = document.querySelector('.footer-year')
 
+const gallery = document.querySelectorAll('.gallery .gallery-box')
+const previewBox = document.querySelector('.preview-box')
+const previewImg = previewBox.querySelector('img')
+const closeBtn = previewBox.querySelector('.icon')
 
 // const panelOptionOne = document.querySelector('.panel__option-one')
 // const newsBtn = document.querySelector('.news__option-btn')
+
+// MOBILE NAV 
 
 const showMobileMenu = () => {
 	navMobile.classList.toggle('nav--active');
@@ -33,6 +39,8 @@ const handleNavLinksAnimation = () => {
 	});
 };
 
+// NAVBAR COLOR 
+
 const handleObserver = () => {
 	const currentSection = window.scrollY;
 
@@ -45,6 +53,8 @@ const handleObserver = () => {
 	})
 };
 
+// FOOTER YEAR 
+
 const handleCurrentYear = () => {
 	const year = (new Date).getFullYear();
 	footerYear.innerText = year;
@@ -54,11 +64,10 @@ const handleCurrentYear = () => {
 //     panelOptionOne.style.display = 'flex'
 // }
 
-burgerBtn.addEventListener('click', showMobileMenu);
-// newsBtn.addEventListener('click', showNewsPanel);
-handleCurrentYear();
-window.addEventListener('scroll', handleObserver);
 
+
+
+// NAV DESKTOP STICK TO TOP 
 
 document.addEventListener('DOMContentLoaded', function(){
     const navDesktop = document.querySelector('.nav-desktop')
@@ -77,3 +86,29 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
 });
+
+
+// GALLERY 
+
+window.onload = () => {
+	for (let i = 0; i < gallery.length; i++) {
+		gallery[i].onclick = () => {
+			
+			function preview() {
+				let selected = gallery[i].querySelector('img').src;
+			}
+
+			preview();
+			previewBox.classList.add('show')
+			
+			closeBtn.onclick = () => {
+				previewBox.classList.remove('show')
+			}
+		}
+	}
+}
+
+burgerBtn.addEventListener('click', showMobileMenu);
+// newsBtn.addEventListener('click', showNewsPanel);
+handleCurrentYear();
+window.addEventListener('scroll', handleObserver);
