@@ -257,68 +257,94 @@ body {
 //
 
 .news {
-	&__option {
-		font-family: 'Roboto', sans-serif;
-		margin: 3em auto;
-		width: 100%;
-		box-shadow: 5px 5px 40px #2e2e2e2e;
-		background: rgb(30, 30, 32);
-		background: linear-gradient(
-			360deg,
-			rgba(30, 30, 32, 1) 0%,
-			rgba(60, 60, 64, 1) 100%
-		);
-		color: white;
-		box-shadow: 0 0 20px rgb(219, 144, 4);
-		border-radius: 8px;
-		overflow: hidden;
+	padding: 3em;
+
+	&__cards {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		text-align: center;
+		flex-wrap: wrap;
+	}
+	
+	&__card {
+		font-family: 'Poppins', sans-serif;
+		height: 320px;
+		width: 30%;
+		margin: 2em 1em;
+		background: #fff;
+		box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+		transition: height .5s;
+
+		&:hover {
+			height: 480px;
+		}
+
+		&:hover .card-bottom {
+			visibility: visible;
+			opacity: 1;
+		}
 
 		&-img {
+			height: 250px;
 			width: 100%;
-			height: 325px;
+
+			img {
+				height: 100%;
+				width: 100%;
+				object-fit: cover;
+			}
 		}
 
-		&-info {
-			position: relative;
-			padding: 2em;
-		}
+		&-text {
+			padding: 5px;
 
-		&-title {
-			margin-top: 0.5em;
-			margin-bottom: 2.4em;
-			font-size: 2.2rem;
-		}
+			.card-title {
+				margin-top: 0.5em;
+				font-size: 1.8rem;
+				font-weight: 600;
+				color: #202020;
+			}
 
-		&-btn {
-			position: absolute;
-			bottom: 1.5em;
-			right: 50%;
-			transform: translateX(50%);
-			padding: 0.5em;
-			width: 40%;
-			font-size: 1.5rem;
-			font-weight: bold;
-			background-color: black;
-			color: white;
-			border: 1px solid $gold;
-			border-radius: 8px;
-			transition: background-color 0.6s, color 0.6s, border 0.6s;
-			cursor: pointer;
-		}
+			.card-date {
+				margin: 0.25em 0;
+				font-size: 1.1rem;
+				color: #282727;
+				line-height: 20px;
+			}
 
-		&-btn:hover {
-			color: black;
-			background-color: $gold;
-			border: 1px solid black;
-		}
+			.card-bottom {
+				padding: 0 20px 10px 20px;
+				margin-top: 0.5em;
+				opacity: 0;
+				visibility: hidden;
+				transition: 0.1s;
 
-		&-date {
-			position: absolute;
-			top: 0.8em;
-			margin-bottom: 1.5em;
-			color: $main-color;
-			font-size: 1.2rem;
-			text-align: left;
+				.card-bottom-text {
+					font-size: 1.4rem;
+				}
+
+				.card-bottom-btn {
+					margin-top: 1em;
+					// text-align: right;
+
+					a {
+						display: inline-flex;
+						padding: 0.5em 0.75em;
+						font-size: 1.3rem;
+						font-weight: 600;
+						text-decoration: none;
+						background: #333;
+						border-radius: 8px;
+						color: #fff;
+						transition: background 0.5s;
+					}
+
+					a:hover {
+						background: #151515;
+					}
+				}
+			}
 		}
 	}
 }
@@ -499,7 +525,7 @@ body {
 			justify-content: center;
 			align-items: center;
 			padding: 1em;
-			font-family: "Noto Sans", sans-serif;
+			font-family: 'Noto Sans', sans-serif;
 			max-width: 1100px;
 			// height: 400px;
 			color: #fff;
@@ -523,7 +549,7 @@ body {
 
 			.card {
 				width: 30%;
-				
+
 				.card-title {
 					font-size: 2rem;
 					color: $gold;
@@ -531,7 +557,7 @@ body {
 
 				.card-list {
 					text-align: left;
-					padding: 1em .5em;
+					padding: 1em 0.5em;
 					list-style: none;
 
 					li {
@@ -542,7 +568,7 @@ body {
 
 						.hour {
 							font-weight: bold;
-							margin: 0.25em .25em 0.25em 0;
+							margin: 0.25em 0.25em 0.25em 0;
 						}
 					}
 				}
@@ -929,6 +955,7 @@ body {
 		}
 
 		&-adress {
+			font-family: 'Noto Sans', sans-serif;
 			margin-top: 1em;
 
 			i {
@@ -942,6 +969,7 @@ body {
 	}
 
 	&__bottom-text {
+		font-family: 'Noto Sans', sans-serif;
 		padding: 1em;
 		text-align: center;
 	}
@@ -1067,16 +1095,16 @@ body {
 		}
 	}
 
-	.news {
-		&__option {
-			text-align: center;
-			width: 75%;
+	// .news {
+	// 	&__option {
+	// 		text-align: center;
+	// 		width: 75%;
 
-			&-title {
-				font-size: 1.8rem;
-			}
-		}
-	}
+	// 		&-title {
+	// 			font-size: 1.8rem;
+	// 		}
+	// 	}
+	// }
 
 	.trainings {
 		&__box {
@@ -1106,10 +1134,16 @@ body {
 		}
 
 		&__plan-box {
-			flex-direction: column;
+			flex-direction: row;
 
 			.card {
-				width: 100%;
+				width: 45%;
+
+				.card-list {
+					li {
+						font-size: 1.8rem;
+					}
+				}
 			}
 		}
 	}
@@ -1150,15 +1184,15 @@ body {
 		}
 	}
 
-	.news {
-		&__option {
-			width: 60%;
+	// .news {
+	// 	&__option {
+	// 		width: 60%;
 
-			&-title {
-				font-size: 2rem;
-			}
-		}
-	}
+	// 		&-title {
+	// 			font-size: 2rem;
+	// 		}
+	// 	}
+	// }
 
 	.trainings {
 		&__box {
@@ -1243,32 +1277,32 @@ body {
 		font-size: 2.2rem;
 	}
 
-	.news {
-		&__box {
-			display: flex;
-			justify-content: center;
-			flex-wrap: wrap;
-		}
+	// .news {
+	// 	&__box {
+	// 		display: flex;
+	// 		justify-content: center;
+	// 		flex-wrap: wrap;
+	// 	}
 
-		&__option {
-			width: 40%;
+	// 	&__option {
+	// 		width: 40%;
 
-			&-img {
-				width: 100%;
-				height: 325px;
-			}
+	// 		&-img {
+	// 			width: 100%;
+	// 			height: 325px;
+	// 		}
 
-			&-title {
-				font-size: 2.2rem;
-			}
+	// 		&-title {
+	// 			font-size: 2.2rem;
+	// 		}
 
-			&-btn {
-				padding: 0.6em 1em;
-				font-size: 1.6rem;
-				width: 200px;
-			}
-		}
-	}
+	// 		&-btn {
+	// 			padding: 0.6em 1em;
+	// 			font-size: 1.6rem;
+	// 			width: 200px;
+	// 		}
+	// 	}
+	// }
 
 	.aboutus {
 		&__text-top {
@@ -1345,7 +1379,7 @@ body {
 
 			&-box {
 				flex-direction: row;
-	
+
 				.card {
 					width: 30%;
 
@@ -1354,7 +1388,6 @@ body {
 					}
 
 					.card-list {
-						
 						li {
 							font-size: 2rem;
 						}
