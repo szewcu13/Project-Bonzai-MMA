@@ -274,7 +274,8 @@ body {
 		margin: 2em 1em;
 		background: #fff;
 		box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-		transition: height .5s;
+		transition: height 1s;
+		overflow: hidden;
 
 		&:hover {
 			height: 480px;
@@ -1007,6 +1008,17 @@ body {
 		}
 	}
 
+	.news {
+
+		&__card {
+			width: 100%;
+
+			&:hover {
+				height: 550px;
+			}
+		}
+	}
+
 	.aboutus {
 		&__text-top {
 			padding: 0;
@@ -1059,12 +1071,6 @@ body {
 			width: 100%;
 		}
 	}
-
-	// .footer {
-	// 	text-align: center;
-	// 	&__box {
-	// 	}
-	// }
 }
 
 @media (min-width: 576px) {
@@ -1095,17 +1101,16 @@ body {
 		}
 	}
 
-	// .news {
-	// 	&__option {
-	// 		text-align: center;
-	// 		width: 75%;
+	.news {
 
-	// 		&-title {
-	// 			font-size: 1.8rem;
-	// 		}
-	// 	}
-	// }
+		&__card {
+			width: 80%;
 
+			&:hover {
+				height: 450px;
+			}
+		}
+	}
 	.trainings {
 		&__box {
 			flex-direction: row;
@@ -1184,15 +1189,16 @@ body {
 		}
 	}
 
-	// .news {
-	// 	&__option {
-	// 		width: 60%;
+	.news {
 
-	// 		&-title {
-	// 			font-size: 2rem;
-	// 		}
-	// 	}
-	// }
+		&__card {
+			width: 45%;
+
+			&:hover {
+				height: 500px;
+			}
+		}
+	}
 
 	.trainings {
 		&__box {
@@ -1408,5 +1414,16 @@ body {
 @media (min-width: 1200px) {
 	.nav-desktop {
 		font-size: 2.5rem;
+	}
+
+	.news {
+
+		&__card {
+			width: 30%;
+
+			&:hover {
+				height: 480px;
+			}
+		}
 	}
 }
